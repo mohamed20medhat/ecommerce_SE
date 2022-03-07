@@ -10,7 +10,7 @@ ____
 
 2. Who is your audience?
  - is there any specific age, gender and location you target? => all the ages 
- - Is there delivary and what places it can reach? => delivary around the country 
+ - Is there shipping services and what places it can reach? => shipping around the whole country 
 
 3. Who is your Competitor?
  - Name your top competitors => amazon || Noon 
@@ -20,10 +20,9 @@ ____
 - Do you sell your products/services internationally? => no I sell them locally
 - Are there any features where you want to emulate your competitors? => the main features and maybe consider improvments later 
 - Do you already have an eCommerce website(s)? => no
-
-
-5. What are the Payment methods provided  (PayPal, Visa, MasterCard ... )?
 - what payment options do you want to use ? => multiple, but mainly paypal
+
+
 
 # Main Features
 #### Admin 
@@ -43,8 +42,8 @@ ____
 # Additional Features
 #### Admin 
 - payment integration *DEMO* => stripe || paypal
-- suggest similure products. => other products that have the same tag => adding popularity points to each product based on how many times they were ordered. and to recommend them to user who have a favourite tag
-- blog for new products and anounsments
+- suggest similar products. => other products that have the same tag => adding popularity points to each product based on how many times they were ordered. and to recommend them to user who have a favourite tag
+- blog for new products and announcements 
 - promotion & discount code tools
 - SEO friendly code => Modifying the html pages 
 - report tools
@@ -61,7 +60,6 @@ ____
 - How to cluster Data Retrieval. so I only get some of the data on each page. so not all the data is loaded 
 - How to make => cart || social media integration || payment integration 
 - The concept of searching the database for the closest match
-- if a user made a review on a product. then this review is stored on the product itself associated-data or where ?
 - 
 
 # Choosen Technology 
