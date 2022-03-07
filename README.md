@@ -62,7 +62,7 @@ ____
 - The concept of searching the database for the closest match
 - 
 
-# Choosen Technology 
+# Chosen Technology 
 - html // css // js => for front end design 
 - node js // express => for the backend 
 - mongodb // mongoos => for the database 
