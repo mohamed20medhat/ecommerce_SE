@@ -1,0 +1,19 @@
+{
+  "name": "ecommerce_se",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamed20medhat/ecommerce_SE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamed20medhat/ecommerce_SE/issues"
+  },
+  "homepage": "https://github.com/mohamed20medhat/ecommerce_SE#readme"
+}
