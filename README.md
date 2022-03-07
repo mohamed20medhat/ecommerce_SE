@@ -1,7 +1,8 @@
 # ecommerce_SE
 
 
-# bussiness analysis
+____
+# Bussiness Analysis
 1.  What is your company about? And what is your products or services?
  - What are you selling? => general products
  - What is your best product line? => electronic equipments
@@ -24,13 +25,13 @@
 5. What is the  Payment methods provided  (PayPal, Visa, MasterCard ... )?
 - what payment options do you want to use ? => multiple, but mainly paypal
 
-# Main features
-#### admin 
+# Main Features
+#### Admin 
 - admin dashboard  
 - add//remove//edit product 
 - view users data
 
-#### user 
+#### User 
 - log in method
 - reviews => users can comment on products
 - detailed product pages
@@ -40,7 +41,7 @@
 - about us page contact us page + FAQ
 
 # Additional Features
-#### admin 
+#### Admin 
 - payment integration *DEMO* => stripe || paypal
 - suggest similar products. => other products that have the same tag => adding popularity points to each product based on how many times they were ordered. and to recommend them to user who have a favourite tag
 - blog for new products and anounsments
@@ -50,20 +51,20 @@
 - email marketing integrations
 - language options
 
-#### user 
+#### User 
 - track orders => view the orders 
 - social media integration for log in. and social media buttons for sharing
 - responsive design 
 - wish lists
 
-# system thinkings
+# System Thinkings
 - how to cluster data retrival. so i only get some of the data on each page. so not all the data is loaded if i was making a big e-commerce
 - how to make => cart || social media integration || payment integration 
 - the concept of searching the database for the most similure match
 - if a user made a review on a product. then this review is stored on the product itself associated-data or where ?
 - 
 
-# choosen technology 
+# Choosen Technology 
 - html // css // js => for front end design 
 - node js // express => for the backend 
 - mongodb // mongoos => for the database 
