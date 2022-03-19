@@ -2,6 +2,12 @@ const express = require('express')
 const app = express()
 const port = process.env.port || 3000
 const path = require('path')
+const mongoose = require("mongoose");
+const connectDB = require("./config/dbConn");
+
+//connect to mongodb
+connectDB();
+
 
 // middlewares
 app.use(express.urlencoded({ extended: false }));
