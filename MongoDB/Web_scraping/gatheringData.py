@@ -27,10 +27,10 @@ def Making_Data_of_products(url):
         
         for pr in products: 
             title = pr.find('a').find('div', {'class': 'info'}).find('h3').text
-            img = pr.find('a').find('div', {'class': 'img-c'}).find('img', {'class': 'img'})['data-src']
-            price = pr.find('a').find('div', {'class': 'info'}).find('div', {'class': 'prc'}).text
+            img   = pr.find('a').find('div', {'class': 'img-c'}).find('img', {'class': 'img'})['data-src']
+            price = float(pr.find('a').find('div', {'class': 'info'}).find('div', {'class': 'prc'}).text.split()[1].replace(',', ''))
             brand = pr.find('a')['data-brand']
-            tags = pr.find('a')['data-category'].split('/')
+            tags  = pr.find('a')['data-category'].split('/')
 
             # rating = float(pr.find('a').find('div', {'class': 'info'}).find('div', {'class': 'rev'}).text.split()[0])
             # no_of_rev  = int(pr.find('a').find('div', {'class': 'info'}).find('div', {'class': 'rev'}).text.split()[-1][2:4])
