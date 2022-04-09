@@ -1,0 +1,24 @@
+<h2  class="page-header"   ><%= product.name  %> </h2>
+
+<div class="book-details">
+    <div > 
+        <img class="book-cover" src="<%= product.coverImagePath  %>" alt="book">
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary" href="/products/<%= product.id  %>/edit">Edit</a>
+            <%- include('../partials/deleteForm', {url: `/products/${product.id}` })  %> 
+        </div>
+    </div>
+
+    <div class="book-details-grid">
+        <div class="book-details-label">Rating: </div>
+        <div> <%= product.rating  %> </div>
+        <div class="book-details-label">Description: </div>
+        <div> <%= product.description  %> </div>
+    </div>
+    
+
+
+</div>
+
+
+

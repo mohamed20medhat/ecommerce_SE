@@ -1,38 +1,46 @@
-require('dotenv').config()
-const express = require('express')
-const app = express()
-const port = process.env.port || 3000
-const path = require('path')
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
+
+
+const express = require("express");
+const app = express();
+const expressLayouts = require("express-ejs-layouts");
+const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
+
+const indexRouter = require("./routes/index");
+const productRouter = require("./routes/products");
+
+
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
+app.set("layout", "layouts/layout");
+app.use(expressLayouts);
+app.use(methodOverride("_method"));
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
+
+
+
 const mongoose = require("mongoose");
-const connectDB = require("./config/dbconn");
-
-//connect to mongodb
-connectDB();
-
-// middlewares
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(express.static(path.join(__dirname, "/public"))); // to serve static files
-
-//routes
-app.use("/", require("./router/root"));
-
-// handeling trying to acces non exisiting pages
-app.all("*", (req, res) => {
-  res.status(404);
-  if (req.accepts("html")) {
-    res.sendFile(path.join(__dirname, "views", "404.html"));
-  } else if (req.accepts("json")) {
-    res.json({ error: "404 Not Found" });
-  } else {
-    res.type("txt").send("404 Not Found");
-  }
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
 });
 
 
-mongoose.connection.once("open", () => {
-    console.log("connected to MongoDB");
-    app.listen(port, () => console.log(`server runing on port ${port}`));
+
+const db = mongoose.connection;
+db.on("error", (error) => console.error(error));
+db.once("open", () => console.log("Connected to MongoDB"));
+
+
+app.use("/", indexRouter);
+app.use("/products", productRouter);
+
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log('server runing')
 });
 
 
@@ -44,18 +52,3 @@ mongoose.connection.once("open", () => {
 
 
 
-
-
-
-
-
-
-
-
-
-// -----------------------------------v
-// this is new commit at 3:42
-
-console.log("this is new commit for testing");
-
-// -----------------------------------
