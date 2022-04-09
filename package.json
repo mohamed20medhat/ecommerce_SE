@@ -1,31 +1,25 @@
 {
-    "name": "ecommerce_se",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "nodemon server.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/mohamed20medhat/ecommerce_SE.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/mohamed20medhat/ecommerce_SE/issues"
-    },
-    "homepage": "https://github.com/mohamed20medhat/ecommerce_SE#readme",
-    "dependencies": {
-        "body-parser": "^1.19.2",
-        "dotenv": "^16.0.0",
-        "ejs": "^3.1.6",
-        "express": "^4.17.3",
-        "mongodb": "^4.4.1",
-        "mongoose": "^6.2.7"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.15"
-    }
+  "name": "ecommerce_re",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-ejs-layouts": "^2.5.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.2.9"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  }
 }

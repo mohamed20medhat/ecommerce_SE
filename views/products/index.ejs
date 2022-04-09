@@ -1,0 +1,23 @@
+<h2 class="page-header">Search Products</h2>
+<form action="/products" method="GET">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Name</label>
+            <input
+                type="text"
+                name="name"
+                value="<%= searchOptions.name %>"
+            />
+        </div>
+    </div>
+
+
+
+
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+
+</form>
+
+<div><%- include('../partials/bookGrid', { products: products, large: true }) %></div>
