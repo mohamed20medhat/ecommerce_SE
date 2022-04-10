@@ -1,7 +1,6 @@
 if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config();
+  require("dotenv").config();
 }
-
 
 const express = require("express");
 const app = express();
@@ -11,7 +10,7 @@ const methodOverride = require("method-override");
 
 const indexRouter = require("./routes/index");
 const productRouter = require("./routes/products");
-
+const loginRouter = require("./routes/userLogin");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -21,34 +20,19 @@ app.use(methodOverride("_method"));
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 
-
-
 const mongoose = require("mongoose");
 mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true,
+  useNewUrlParser: true,
 });
-
-
 
 const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Connected to MongoDB"));
 
-
 app.use("/", indexRouter);
 app.use("/products", productRouter);
-
+app.use("/login", loginRouter);
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log('server runing')
+  console.log("server runing");
 });
-
-
-
-
-
-
-
-
-
-
