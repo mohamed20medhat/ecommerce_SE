@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
     const product = new Product({
         name: req.body.name,
         description: req.body.description,
-        rating: req.body.rating,
+        cost: req.body.cost,
     });
 
     saveCover(product, req.body.cover);

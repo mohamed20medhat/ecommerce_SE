@@ -7,6 +7,7 @@
 .book-cover {
     width: var(--book-cover-width);
     height: calc(var(--book-cover-width) / var(--book-cover-aspect-ratio));
+    border-radius: 5px;
 }
 
 .book-cover-large {
