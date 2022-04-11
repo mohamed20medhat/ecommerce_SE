@@ -81,6 +81,45 @@ router.delete("/:id", async (req, res) => {
 });
 
 
+
+// edit product
+router.get("/:id/edit", async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
+        renderEditPage(res, product);
+    } catch {
+        res.redirect("/");
+    }
+});
+
+// update product Route
+//? continue from here
+router.put("/:id", async (req, res) => {
+    let product;
+    try {
+        product = await Product.findById(req.params.id);
+        product.name = req.body.name;
+        product.description = req.body.description;
+        product.cost = req.body.cost
+
+        if (req.body.cover != null && req.body.cover !== "") {
+            saveCover(product, req.body.cover);
+        }
+        await product.save();
+
+        res.redirect(`/products/&{product.id}`);
+    } catch {
+        renderNewPage(res, product, true);
+        if (product != null) {
+            renderEditPage(res, product, true);
+        } else {
+            res.redirect("/");
+        }
+    }
+});
+
+
+
 async function renderFormPage(res, product, form, hasError = false) {
     try {
         const params = {
@@ -89,9 +128,9 @@ async function renderFormPage(res, product, form, hasError = false) {
 
         if (hasError) {
             if (form === "edit") {
-                params.errorMessage = "Error Editing Book";
+                params.errorMessage = "Error Editing product";
             } else {
-                params.errorMessage = "Error Updating Book";
+                params.errorMessage = "Error Updating product";
             }
         }
 
@@ -108,6 +147,9 @@ async function renderNewPage(res, product, hasError = false) {
     renderFormPage(res, product, "new", hasError);
 }
 
+async function renderEditPage(res, product, hasError = false) {
+    renderFormPage(res, product, "edit", hasError);
+}
 
 
 

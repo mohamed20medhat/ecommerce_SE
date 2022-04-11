@@ -5,7 +5,7 @@ const Product = require('../models/product')
 router.get('/', async (req, res) => {
   let products 
   try {
-    products = await Product.find().sort({ createAt: "desc" }).limit(10).exec();
+    products = await Product.find().sort({ createAt: "desc" }).limit(15).exec();
   } catch {
     products = [];
   }
