@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 router.use(cookieParser());
 
-// All products route
+// All products route .
 router.get("/", async (req, res) => {
   if (!req.cookies.jwt) {
     return res.redirect("/login");

@@ -4,7 +4,6 @@ const Product = require("../models/product");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 router.use(cookieParser());
-const checkCookies = require("./checkCookies");
 
 router.get("/", async (req, res) => {
   if (!req.cookies.jwt) {
