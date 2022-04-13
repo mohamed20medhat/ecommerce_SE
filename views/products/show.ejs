@@ -4,9 +4,14 @@
     <div > 
         <img class="book-cover" src="<%= product.coverImagePath  %>" alt="book">
         <div class="book-details-btn-grid">
-            <a class="btn btn-primary" href="/products/<%= product.id  %>/edit">Edit</a>
-            <%- include('../partials/deleteForm', {url: `/products/${product.id}` })  %> 
-        </div>
+                <% if(isAdmin) { %> 
+                    <a class="btn btn-primary" href="/products/<%= product.id  %>/edit">Edit</a>
+                    <%- include('../partials/deleteForm', {url: `/products/${product.id}` })  %> 
+                    <% }else{ %> 
+                        <a class="btn btn-primary" href="">Cart</a>
+                        <a class="btn btn-primary" href="">Buy</a>
+                <% } %> 
+            </div>
     </div>
 
     <div class="book-details-grid">

@@ -7,7 +7,7 @@
 .book-cover {
     width: var(--book-cover-width);
     height: calc(var(--book-cover-width) / var(--book-cover-aspect-ratio));
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .book-cover-large {
@@ -41,6 +41,7 @@
     align-items: center;
     gap: 1rem;
     grid-template-columns: auto auto;
+    margin-left: 40px;
 }
 
 .book-details-btn-grid {
