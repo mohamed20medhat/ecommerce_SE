@@ -27,6 +27,7 @@
 
 .book-details {
     display: flex;
+    justify-self: space-between;
 }
 
 .book-details-label {
@@ -36,6 +37,7 @@
 }
 
 .book-details-grid {
+    margin-left: 30px;
     display: grid;
     align-content: flex-start;
     align-items: center;

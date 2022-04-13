@@ -3,10 +3,17 @@
 <div class="book-details">
     <div > 
         <img class="book-cover" src="<%= product.coverImagePath  %>" alt="book">
-        <div class="book-details-btn-grid">
-            <a class="btn btn-primary" href="/products/<%= product.id  %>/edit">Edit</a>
-            <%- include('../partials/deleteForm', {url: `/products/${product.id}` })  %> 
-        </div>
+        <% if(isAdmin){ %> 
+            <div class="book-details-btn-grid">
+                <a class="btn btn-primary" href="/products/<%= product.id  %>/edit">Edit</a>
+                <%- include('../partials/deleteForm', {url: `/products/${product.id}` })  %> 
+            </div>
+        <% }else { %> 
+            <div class="book-details-btn-grid">
+                <a class="btn btn-primary" href="">Buy</a>
+                <a class="btn btn-primary" href="">Cart</a>
+            </div>
+        <% } %> 
     </div>
 
     <div class="book-details-grid">

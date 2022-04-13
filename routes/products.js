@@ -61,9 +61,14 @@ router.post("/", async (req, res) => {
 
 //show a certain product
 router.get("/:id", async (req, res) => {
+  const user = jwt.verify(req.cookies.jwt, "secret").username;
+  let isAdmin = false
+  if (user === "admin") {
+      isAdmin = true
+  }
   try {
     const product = await Product.findById(req.params.id).exec();
-    res.render("products/show", { product: product });
+    res.render("products/show", { product: product, isAdmin: isAdmin });
   } catch {
     res.redirect("/");
   }
@@ -108,7 +113,6 @@ router.get("/:id/edit", async (req, res) => {
 });
 
 // update product Route
-//? continue from here
 router.put("/:id", async (req, res) => {
   let product;
   try {
