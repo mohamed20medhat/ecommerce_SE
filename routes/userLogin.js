@@ -3,7 +3,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const router = require("express").Router();
 const cookieParser = require("cookie-parser");
-const checkCookies = require("./checkCookies");
 router.use(cookieParser());
 
 router.get("/", async (req, res) => {
