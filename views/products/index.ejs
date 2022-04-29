@@ -13,11 +13,16 @@
 
 
 
-
+    
     <div class="form-row form-row-end">
         <button class="btn btn-primary" type="submit">Search</button>
+        <% if(isAdmin) { %> 
+            <a class="btn btn-primary" href="/products/new">Add new</a>
+        <% } %> 
     </div>
-
+    
+    
 </form>
+
 
 <div><%- include('../partials/bookGrid', { products: products, large: true }) %></div>

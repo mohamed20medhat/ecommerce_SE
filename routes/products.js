@@ -6,10 +6,16 @@ const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 router.use(cookieParser());
 
-// All products route
+//? All products route || show all products
 router.get("/", async (req, res) => {
   if (!req.cookies.jwt) {
     return res.redirect("/login");
+  }
+
+  const user = jwt.verify(req.cookies.jwt, "secret").username;
+  let isAdmin;
+  if (user === "admin") {
+      isAdmin = true;
   }
 
   let query = Product.find();
@@ -22,6 +28,7 @@ router.get("/", async (req, res) => {
     res.render("products/index", {
       products: products,
       searchOptions: req.query,
+      isAdmin : isAdmin
     });
   } catch {
     res.redirect("/");
@@ -113,7 +120,6 @@ router.get("/:id/edit", async (req, res) => {
 });
 
 // update product Route
-//? continue from here
 router.put("/:id", async (req, res) => {
   let product;
   try {
